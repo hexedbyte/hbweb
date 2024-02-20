@@ -1,8 +1,12 @@
-import React from 'react';
-import './App.css';
-import Box from '@mui/joy/Box';
-import { Avatar, Button, Card, CardContent, CardCover, CssBaseline, CssVarsProvider, Grid, Stack, Typography } from '@mui/joy';
 import theme from './theme';
+import { Box, Button, CssBaseline, CssVarsProvider, Divider, Grid, Link, Stack, Typography } from '@mui/joy';
+import { Badger, CardBadger } from './components/Badge';
+import WorkExp from './components/WorkExp';
+import References from './components/References';
+import Education from './components/Education';
+import Languages from './components/Languages';
+import Private from './components/Private';
+import Portfolio from './components/Portfolio';
 import { _ } from './Localization';
 
 function App() {
@@ -15,88 +19,51 @@ function App() {
           height: '100vh',
           minWidth: '100vh',
           maxWidth: '100vh',
-          margin: 'auto',
+          margin: '40px auto 40px auto',
         }}
       >
-        <Grid
-          container
-          direction='row'
-          justifyContent='center'
-          alignItems='center'
-          spacing={2}
-          sx={{ flexGrow: 1 }}
-        >
-          <Grid xs={6}>
-            <Typography level='h4' color='danger'>{_.title}</Typography>
-            <Typography level='h1'>MURAT AYDIN</Typography>
-            <Typography level='body-md'>{_.intro}</Typography>
-            <Button color='primary'>{_.contact}</Button>
-          </Grid>
-          <Grid xs={6}>
-            <Stack spacing={2}>
-              <Stack direction='row' justifyContent='flex-start' alignItems='flex-start' spacing={4}>
-                <Stack
-                  direction='row'
-                  justifyContent='flex-start'
-                  alignItems='center'
-                  spacing={2}
-                >
-                  <img src={'/htb-ranking.png'} width={98} />
-                  <Stack>
-                    <Typography level='title-sm'>{_.htbRanking}</Typography>
-                    <Typography level='title-lg'>{_.htbRank}</Typography>
-                  </Stack>
-                </Stack>
+        <Stack direction='row' spacing={2} mb={1}>
+          <Typography level='h4' color='danger' variant='solid'>{_.title1}</Typography>
+          <Typography level='h4' color='primary' variant='soft'>{_.title2}</Typography>
+        </Stack>
+        <Typography level='h1'>MURAT AYDIN</Typography>
+        <Stack direction='row' spacing={2} alignItems='center' mt={1} mb={4}>
+          <img src='/germany.png' />
+          <Typography level='body-sm'>{_.location}</Typography>
+          <Link href='mailto:hexedbyte@proton.me' target='_blank'>hexedbyte@proton.me</Link>
+        </Stack>
 
-                <Stack
-                  direction='row'
-                  justifyContent='flex-start'
-                  alignItems='center'
-                  spacing={2}
-                >
-                  <Card component='li' sx={{ width: 90, height: 98 }} variant='plain'>
-                    <CardCover>
-                      <img
-                        src='/frame-1.png'
-                        loading='lazy'
-                        alt=''
-                        width={98}
-                      />
-                    </CardCover>
-                    <CardContent sx={{ justifyContent: 'center', textAlign: 'center' }}>
-                      <Typography
-                        level='h3'
-                        fontWeight='lg'
-                        color='success'
-                      >
-                        22<Typography level='body-xs' fontWeight='lg'>{_.htbGlobalRankSuffix}</Typography>
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                  <Stack>
-                    <Typography level='title-sm'>{_.htbGlobal}</Typography>
-                    <Typography level='title-lg'>{_.htbTop}</Typography>
-                    <Typography level='body-xs'>{_.htbTopDetail}</Typography>
-                  </Stack>
-                </Stack>
-              </Stack>
+        <Typography level='title-md' color='neutral'>{_.introTitle}</Typography>
+        <Typography level='body-md'>{_.intro}</Typography>
 
-              <Stack
-                direction='row'
-                justifyContent='flex-start'
-                alignItems='center'
-                spacing={2}
-              >
-                <Stack spacing={1} textAlign='center'>
-                  <img src={'/dante.png'} width={98} />
-                  <Typography level='title-sm' fontWeight='lg'>{_.htbDante}</Typography>
-                </Stack>
-              </Stack>
-            </Stack>
-          </Grid>
+        <Typography level='title-sm' mt={4} mb={3} color='neutral' variant='soft' fontWeight='lg'>{_.featured}</Typography>
+        <Grid container spacing={2} sx={{ flexGrow: 1 }} >
+          <Grid xs={3}><Badger image='htb-ranking' title={_.htbRank} subtitle={_.htbRanking} details={_.htbRankDetails} /></Grid>
+          <Grid xs={3}><CardBadger image='frame-1' title={_.htbTop} subtitle={_.htbGlobal} details={_.htbTopDetail} incardTxtBig='22' incardTxtSmall={_.htbGlobalRankSuffix} /></Grid>
+          <Grid xs={3}><Badger image='synack' title={_.synackTitle} subtitle={_.synackSubtitle} details={_.synackDetails} /></Grid>
+          <Grid xs={3}><Badger image='dante' title={_.htbDante} subtitle={_.certified} details={_.pentest} /></Grid>
 
-          <Typography level='body-md'>{_.rtodesc}</Typography>
+          <Grid xs={3}><Badger image='zeropoint' title={_.zeropointTitle} subtitle={_.certified} details={_.zeropointDetails} /></Grid>
+          <Grid xs={3}><Badger image='turkgov' title={_.turkGov} subtitle={_.subcontractor} details={_.turkGovDetails} /></Grid>
+          <Grid xs={3}><Badger image='turkpolice' title={_.turkPolice} subtitle={_.subcontractor} /></Grid>
+          <Grid xs={3}><Badger image='ozelharekat' title={_.turkOzel} subtitle={_.subcontractor} /></Grid>
+
         </Grid>
+
+        <Portfolio />
+
+        <Divider />
+
+        <WorkExp />
+
+        <References />
+
+        <Education />
+
+        <Languages />
+
+        <Private />
+
       </Box>
     </CssVarsProvider >
 
