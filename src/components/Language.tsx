@@ -2,19 +2,19 @@ import { ButtonGroup, IconButton } from "@mui/joy"
 import ReactCountryFlag from "react-country-flag"
 import { _ } from "../Localization";
 
+interface iApp {
+    func: any;
+}
+
 interface iProps {
     country: string;
     language: string;
+    func: any;
 }
 
 const Language = (props: iProps) => {
-
-    function handleLanguage(l: string) {
-        _.setLanguage(l);
-    }
-
     return (
-        <IconButton onClick={() => { handleLanguage(props.language) }}>
+        <IconButton onClick={() => { props.func(props.language) }}>
             <ReactCountryFlag
                 countryCode={props.country}
                 svg
@@ -30,14 +30,14 @@ const Language = (props: iProps) => {
     )
 }
 
-const LanguageGroup = () => {
+const LanguageGroup = (props: iApp) => {
     return (
         <ButtonGroup variant='soft' size='sm'>
-            <Language country='US' language='en' />
-            <Language country='DE' language='de' />
-            <Language country='TR' language='tr' />
-            <Language country='IT' language='it' />
-            <Language country='GR' language='gr' />
+            <Language country='US' language='en' func={props.func} />
+            <Language country='DE' language='de' func={props.func} />
+            <Language country='TR' language='tr' func={props.func} />
+            <Language country='IT' language='it' func={props.func} />
+            <Language country='GR' language='gr' func={props.func} />
         </ButtonGroup>
     )
 }

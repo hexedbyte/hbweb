@@ -9,8 +9,28 @@ import Private from './components/Private';
 import Portfolio from './components/Portfolio';
 import { _ } from './Localization';
 import LanguageGroup from './components/Language';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [language, setLanguage] = useState<string>("en");
+
+  let lang = _.getInterfaceLanguage().substring(0, 2);
+  if (lang != "en" && lang != "de" && lang != "tr" && lang != "it" && lang != "gr") {
+    lang = "en";
+  }
+
+  function handleLanguage(lang: string) {
+    if (lang != "en" && lang != "de" && lang != "tr" && lang != "it" && lang != "gr") {
+      lang = "en";
+    }
+    _.setLanguage(lang);
+    setLanguage(lang);
+  }
+
+  useEffect(() => {
+    _.setLanguage(language);
+  }, [language]);
+
   return (
     <CssVarsProvider disableTransitionOnChange theme={theme} defaultMode='dark'>
       <CssBaseline />
@@ -28,7 +48,7 @@ function App() {
             <Typography level='h4' color='danger' variant='solid'>{_.title1}</Typography>
             <Typography level='h4' color='primary' variant='soft'>{_.title2}</Typography>
           </Stack>
-          <LanguageGroup />
+          <LanguageGroup func={handleLanguage} />
         </Stack>
         <Typography level='h1'>MURAT AYDIN</Typography>
         <Stack direction='row' spacing={2} alignItems='center' mt={1} mb={4}>

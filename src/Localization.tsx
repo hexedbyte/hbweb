@@ -205,15 +205,15 @@ export const _ = new LocalizedStrings({
         languages: [
             {
                 label: 'English',
-                rank: 1,
+                rank: "1",
             },
             {
                 label: 'Turkish',
-                rank: 0,
+                rank: "0",
             },
             {
                 label: 'German',
-                rank: 3,
+                rank: "3",
             }
         ],
         languageRanks: ["Native", "Fluent", "Intermediate", "Beginner",],
@@ -429,15 +429,15 @@ export const _ = new LocalizedStrings({
         languages: [
             {
                 label: 'Englisch',
-                rank: 1,
+                rank: "1",
             },
             {
                 label: 'Türkisch',
-                rank: 0,
+                rank: "0",
             },
             {
                 label: 'Deutsch',
-                rank: 3,
+                rank: "3",
             }
         ],
         languageRanks: ["Muttersprachler", "Fließend", "Mittelstufe", "Anfänger",],
@@ -653,15 +653,15 @@ export const _ = new LocalizedStrings({
         languages: [
             {
                 label: 'İngilizce',
-                rank: 1,
+                rank: "1",
             },
             {
                 label: 'Türkçe',
-                rank: 0,
+                rank: "0",
             },
             {
                 label: 'Almanca',
-                rank: 3,
+                rank: "3",
             }
         ],
         languageRanks: ["Ana Dil", "Akıcı", "Orta", "Başlangıç",],
@@ -877,15 +877,15 @@ export const _ = new LocalizedStrings({
         languages: [
             {
                 label: 'Inglese',
-                rank: 1,
+                rank: "1",
             },
             {
                 label: 'Turco',
-                rank: 0,
+                rank: "0",
             },
             {
                 label: 'Tedesco',
-                rank: 3,
+                rank: "3",
             }
         ],
         languageRanks: ["Madrelingua", "Fluente", "Intermedio", "Principiante",],
@@ -1101,15 +1101,15 @@ export const _ = new LocalizedStrings({
         languages: [
             {
                 label: 'Αγγλικά',
-                rank: 1,
+                rank: "1",
             },
             {
                 label: 'Τουρκικά',
-                rank: 0,
+                rank: "0",
             },
             {
                 label: 'Γερμανικά',
-                rank: 3,
+                rank: "3",
             }
         ],
         languageRanks: ["Μητρική", "Άπταιστη", "Ενδιάμεση", "Αρχάρια",],
