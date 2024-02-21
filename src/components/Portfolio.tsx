@@ -8,8 +8,8 @@ const Portfolio = () => {
             <Title str={_.portfolioTitle} />
 
             <List marker='disc'>
-                {_.portfolio.map((v) => (
-                    <ListItem>{v}</ListItem>
+                {_.portfolio.map((v, k) => (
+                    <ListItem key={'po' + k.toString()}>{v}</ListItem>
                 ))}
             </List>
         </Box>

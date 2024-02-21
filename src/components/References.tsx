@@ -15,28 +15,20 @@ const References = () => {
                 <thead>
                     <tr>
                         <th>{_.reference}</th>
-                        <th>{_.title}</th>
-                        <th>{_.company}</th>
-                        <th>{_.contact}</th>
+                        <th>{_.job}</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         _.references.map((v, k) => (
-                            <tr>
+                            <tr key={'ref' + k.toString()}>
                                 <td>
-                                    <Typography noWrap fontWeight="lg">
-                                        {v.name}
-                                    </Typography>
-                                </td>
-                                <td>
-                                    <Typography level="body-xs">{v.title}</Typography>
-                                </td>
-                                <td>
-                                    <Typography level="body-xs">{v.company}</Typography>
-                                </td>
-                                <td>
+                                    <Typography noWrap fontWeight="lg">{v.name}</Typography>
                                     <Typography level="body-xs">{v.contact}</Typography>
+                                </td>
+                                <td>
+                                    <Typography noWrap level="body-sm">{v.title}</Typography>
+                                    <Typography level="body-xs">{v.company}</Typography>
                                 </td>
                             </tr>
                         ))}

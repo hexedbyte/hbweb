@@ -22,7 +22,7 @@ const Education = () => {
                 <tbody>
                     {
                         _.education.map((v, k) => (
-                            <tr>
+                            <tr key={'edutr' + k.toString()}>
                                 <td>
                                     <Typography noWrap fontWeight="lg">
                                         {v.name}

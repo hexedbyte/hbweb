@@ -8,8 +8,8 @@ const Private = () => {
             <Title str={_.privateTitle} />
 
             <List marker='circle'>
-                {_.private.map((v) => (
-                    <ListItem>{v}</ListItem>
+                {_.private.map((v, k) => (
+                    <ListItem key={'pri' + k.toString()}>{v}</ListItem>
                 ))}
             </List>
         </Box>

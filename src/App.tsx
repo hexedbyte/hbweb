@@ -1,5 +1,5 @@
 import theme from './theme';
-import { Box, Button, CssBaseline, CssVarsProvider, Divider, Grid, Link, Stack, Typography } from '@mui/joy';
+import { Box, CssBaseline, CssVarsProvider, Grid, Link, Stack, Typography } from '@mui/joy';
 import { Badger, CardBadger } from './components/Badge';
 import WorkExp from './components/WorkExp';
 import References from './components/References';
@@ -8,6 +8,7 @@ import Languages from './components/Languages';
 import Private from './components/Private';
 import Portfolio from './components/Portfolio';
 import { _ } from './Localization';
+import LanguageGroup from './components/Language';
 
 function App() {
   return (
@@ -22,9 +23,12 @@ function App() {
           margin: '40px auto 40px auto',
         }}
       >
-        <Stack direction='row' spacing={2} mb={1}>
-          <Typography level='h4' color='danger' variant='solid'>{_.title1}</Typography>
-          <Typography level='h4' color='primary' variant='soft'>{_.title2}</Typography>
+        <Stack direction='row' mb={1} justifyContent='space-between' alignItems='flex-start' spacing={4}>
+          <Stack direction='row' spacing={2}>
+            <Typography level='h4' color='danger' variant='solid'>{_.title1}</Typography>
+            <Typography level='h4' color='primary' variant='soft'>{_.title2}</Typography>
+          </Stack>
+          <LanguageGroup />
         </Stack>
         <Typography level='h1'>MURAT AYDIN</Typography>
         <Stack direction='row' spacing={2} alignItems='center' mt={1} mb={4}>

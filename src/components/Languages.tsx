@@ -8,8 +8,9 @@ const Languages = () => {
             <Title str={_.languagesTitle} />
 
             <Stack direction='row'>
-                {_.languages.map((v) => (
+                {_.languages.map((v, k) => (
                     <Box
+                        key={'lang' + k.toString()}
                         sx={{
                             display: 'flex',
                             alignItems: 'center',

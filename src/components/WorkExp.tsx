@@ -1,12 +1,12 @@
-import { Box, Stack, Table, Typography } from "@mui/joy";
-import { _ } from "../Localization";
-import Title from "./Title";
-import ReactCountryFlag from "react-country-flag";
+import { Box, Link, Stack, Table, Typography } from '@mui/joy';
+import { _ } from '../Localization';
+import Title from './Title';
+import ReactCountryFlag from 'react-country-flag';
 
 const WorkExp = () => {
 
     function handleClick(l: string) {
-        window.open(l, "_blank");
+        window.open(l, '_blank');
     }
 
     return (
@@ -14,7 +14,7 @@ const WorkExp = () => {
             <Title str={_.workexpTitle} />
 
             <Table
-                aria-label="table with ellipsis texts"
+                aria-label='table with ellipsis texts'
                 noWrap
                 sx={{ mx: 'auto' }}
             >
@@ -27,36 +27,32 @@ const WorkExp = () => {
                 <tbody>
                     {
                         _.workexp.map((v, k) => (
-                            <tr>
+                            <tr key={'we' + k.toString()}>
                                 <td>
                                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                                         <Box sx={{ minWidth: 0 }}>
-                                            <Typography noWrap fontWeight="lg">
-                                                {v.job}
-                                            </Typography>
-                                            <Typography noWrap level="body-sm" color={k == 0 ? 'success' : 'neutral'}>
-                                                {v.company}
-                                            </Typography>
+                                            <Typography noWrap fontWeight='lg'>{v.job}</Typography>
+                                            <Link href={v.link} target='_blank' level='body-sm' color={k == 0 ? 'success' : 'neutral'}>{v.company}</Link>
                                         </Box>
                                     </Box>
                                 </td>
                                 <td style={{ textAlign: 'right' }}>
                                     <Stack direction='row' spacing={1} justifyContent='right'>
                                         <Stack>
-                                            <Typography level="body-xs">{v.location}</Typography>
+                                            <Typography level='body-xs'>{v.location}</Typography>
 
                                             <Stack direction='row' spacing={1} justifyContent='right' alignItems='center'>
-                                                <Typography level="body-xs" color={k == 0 ? 'success' : 'neutral'}>{v.start}</Typography>
-                                                <Typography level="body-xs">-</Typography>
-                                                <Typography level="body-xs" color={k == 0 ? 'success' : 'neutral'}>{v.end.length == 0 ? '........' : v.end}</Typography>
+                                                <Typography level='body-xs' color={k == 0 ? 'success' : 'neutral'}>{v.start}</Typography>
+                                                <Typography level='body-xs'>-</Typography>
+                                                <Typography level='body-xs' color={k == 0 ? 'success' : 'neutral'}>{v.end.length == 0 ? '........' : v.end}</Typography>
                                             </Stack>
                                         </Stack>
 
                                         <ReactCountryFlag
                                             countryCode={v.flag}
                                             svg
-                                            cdnUrl="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/"
-                                            cdnSuffix="svg"
+                                            cdnUrl='https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/'
+                                            cdnSuffix='svg'
                                             title={v.flag}
                                             style={{
                                                 width: '20px',
