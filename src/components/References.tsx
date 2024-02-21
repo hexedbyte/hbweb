@@ -1,10 +1,11 @@
 import { Box, Table, Typography } from "@mui/joy";
 import { _ } from "../Localization";
+import Title from "./Title";
 
 const References = () => {
     return (
         <Box>
-            <Typography level='title-md' color='primary' fontWeight={'lg'}>REFERENCES</Typography>
+            <Title str={_.referencesTitle} />
 
             <Table
                 aria-label="table with ellipsis texts"
@@ -13,10 +14,10 @@ const References = () => {
             >
                 <thead>
                     <tr>
-                        <th>Reference</th>
-                        <th>Title</th>
-                        <th>Company</th>
-                        <th>Contact</th>
+                        <th>{_.reference}</th>
+                        <th>{_.title}</th>
+                        <th>{_.company}</th>
+                        <th>{_.contact}</th>
                     </tr>
                 </thead>
                 <tbody>

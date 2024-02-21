@@ -7,7 +7,6 @@ export const _ = new LocalizedStrings({
         title2: 'Software Developer',
         introTitle: 'What is a red team operator?',
         intro: 'A red team operator is a cybersecurity expert who mimics real attacks on an organization\'s systems to uncover vulnerabilities.Unlike blue team defenders, they take on the role of adversaries, using advanced methods to find weaknesses.They function as ethical hackers, aiding organizations in fortifying their defenses by revealing security gaps before actual threats exploit them.',
-        contact: 'Contact',
         location: 'Munich, Germany',
         featured: 'Featured Achievements',
 
@@ -15,6 +14,10 @@ export const _ = new LocalizedStrings({
         certified: 'Certified',
         pentest: 'Penetration Testing',
         subcontractor: 'Subcontractor',
+        loctime: 'Location / Time',
+        title: 'Title',
+        company: 'Company',
+        contact: 'Contact',
 
         // htb
         htbRanking: 'HTB Rank',
@@ -42,6 +45,7 @@ export const _ = new LocalizedStrings({
         turkOzel: 'Special Operations',
 
         // portfolio
+        portfolioTitle: 'Portfolio',
         portfolio: [
             'Global application security and strategy, penetration testing, security patches',
             'MOVEit Transfer cyber attack research and analysis',
@@ -73,6 +77,8 @@ export const _ = new LocalizedStrings({
         ],
 
         // work
+        workexpTitle: 'Work Experience',
+        job: 'Title / Company',
         workexp: [
             {
                 company: 'Schaeffler Group',
@@ -82,6 +88,7 @@ export const _ = new LocalizedStrings({
                 start: '2023',
                 end: '',
                 location: 'Regensburg, Germany',
+                flag: 'DE',
             },
             {
                 company: 'Giesecke+Devrient',
@@ -91,6 +98,7 @@ export const _ = new LocalizedStrings({
                 start: '2022',
                 end: '2022',
                 location: 'Munich, Germany',
+                flag: 'DE',
             },
             {
                 company: 'Synack',
@@ -100,6 +108,7 @@ export const _ = new LocalizedStrings({
                 start: '2021',
                 end: '2022',
                 location: '(Remote), USA',
+                flag: 'US',
             },
             {
                 company: 'Dassault Systemes',
@@ -109,6 +118,7 @@ export const _ = new LocalizedStrings({
                 start: '2019',
                 end: '2022',
                 location: 'Munich, Germany',
+                flag: 'DE',
             },
             {
                 company: 'KI Labs',
@@ -118,6 +128,7 @@ export const _ = new LocalizedStrings({
                 start: '2017',
                 end: '2019',
                 location: 'Munich, Germany',
+                flag: 'DE',
             },
             {
                 company: 'Pixotope',
@@ -127,6 +138,7 @@ export const _ = new LocalizedStrings({
                 start: '2017',
                 end: '2017',
                 location: 'Oslo, Norway',
+                flag: 'NO',
             },
             {
                 company: 'Podoces Technology',
@@ -135,7 +147,8 @@ export const _ = new LocalizedStrings({
                 job: 'Founder & CEO',
                 start: '2011',
                 end: '2016',
-                location: 'Oslo, Norway',
+                location: 'Ankara, Türkiye',
+                flag: 'TR',
             },
             {
                 company: 'Bilisim Inovasyon',
@@ -144,7 +157,8 @@ export const _ = new LocalizedStrings({
                 job: 'Software Developer',
                 start: '2009',
                 end: '2012',
-                location: 'Oslo, Norway',
+                location: 'Ankara, Türkiye',
+                flag: 'TR',
             },
             {
                 company: 'Intel',
@@ -153,11 +167,14 @@ export const _ = new LocalizedStrings({
                 job: 'Junior Software Developer',
                 start: '2007',
                 end: '2009',
-                location: 'Oslo, Norway',
+                location: 'Ankara, Türkiye',
+                flag: 'TR',
             },
         ],
 
         // references
+        referencesTitle: 'References',
+        reference: 'Reference',
         references: [
             {
                 name: 'Martin Herrmann',
@@ -192,6 +209,9 @@ export const _ = new LocalizedStrings({
         ],
 
         // education
+        educationTitle: 'Education',
+        institution: 'Institution',
+        faculty: 'Faculty / Branch',
         education: [
             {
                 name: 'Hacettepe University',
@@ -210,7 +230,26 @@ export const _ = new LocalizedStrings({
             },
         ],
 
+        // languages
+        languagesTitle: 'Languages',
+        languages: [
+            {
+                label: 'English',
+                rank: 1,
+            },
+            {
+                label: 'Turkish',
+                rank: 0,
+            },
+            {
+                label: 'German',
+                rank: 3,
+            }
+        ],
+        languageRanks: ["Native", "Fluent", "Intermediate", "Beginner",],
+
         // private
+        privateTitle: 'Private Life',
         private: [
             'Super-sport motorcycle rider',
             'Camping and remote work with a fully equipped and online camper',

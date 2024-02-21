@@ -1,10 +1,11 @@
 import { Box, Table, Typography } from "@mui/joy";
 import { _ } from "../Localization";
+import Title from "./Title";
 
 const Education = () => {
     return (
         <Box>
-            <Typography level='title-md' color='primary' fontWeight={'lg'}>EDUCATION</Typography>
+            <Title str={_.educationTitle} />
 
             <Table
                 aria-label="table with ellipsis texts"
@@ -13,9 +14,9 @@ const Education = () => {
             >
                 <thead>
                     <tr>
-                        <th>Institution</th>
-                        <th>Faculty / Branch</th>
-                        <th>Location / Time</th>
+                        <th>{_.institution}</th>
+                        <th>{_.faculty}</th>
+                        <th>{_.loctime}</th>
                     </tr>
                 </thead>
                 <tbody>

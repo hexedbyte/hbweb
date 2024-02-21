@@ -1,5 +1,7 @@
-import { Box, LinearProgress, Stack, Table, Typography } from "@mui/joy";
+import { Box, Stack, Table, Typography } from "@mui/joy";
 import { _ } from "../Localization";
+import Title from "./Title";
+import ReactCountryFlag from "react-country-flag";
 
 const WorkExp = () => {
 
@@ -9,7 +11,7 @@ const WorkExp = () => {
 
     return (
         <Box>
-            <Typography level='title-md' color='primary' fontWeight={'lg'}>WORK EXPERIENCE</Typography>
+            <Title str={_.workexpTitle} />
 
             <Table
                 aria-label="table with ellipsis texts"
@@ -18,9 +20,8 @@ const WorkExp = () => {
             >
                 <thead>
                     <tr>
-                        <th>Title / Company</th>
-                        <th style={{ width: '180px' }}>Location</th>
-                        <th style={{ width: '96px' }}>Time</th>
+                        <th>{_.job}</th>
+                        <th style={{ width: '180px', textAlign: 'right' }}>{_.loctime}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,20 +34,37 @@ const WorkExp = () => {
                                             <Typography noWrap fontWeight="lg">
                                                 {v.job}
                                             </Typography>
-                                            <Typography noWrap level="body-sm">
+                                            <Typography noWrap level="body-sm" color={k == 0 ? 'success' : 'neutral'}>
                                                 {v.company}
                                             </Typography>
                                         </Box>
                                     </Box>
                                 </td>
-                                <td>
-                                    <Typography level="body-xs">{v.location}</Typography>
-                                </td>
-                                <td>
-                                    <Stack direction='row' spacing={1} justifyContent='center' alignItems='center'>
-                                        <Typography level="body-xs">{v.start}</Typography>
-                                        <Typography level="body-xs">-</Typography>
-                                        {v.end.length == 0 ? <LinearProgress sx={{ width: '16px', height: '8px' }} /> : <Typography level="body-xs">{v.end}</Typography>}
+                                <td style={{ textAlign: 'right' }}>
+                                    <Stack direction='row' spacing={1} justifyContent='right'>
+                                        <Stack>
+                                            <Typography level="body-xs">{v.location}</Typography>
+
+                                            <Stack direction='row' spacing={1} justifyContent='right' alignItems='center'>
+                                                <Typography level="body-xs" color={k == 0 ? 'success' : 'neutral'}>{v.start}</Typography>
+                                                <Typography level="body-xs">-</Typography>
+                                                <Typography level="body-xs" color={k == 0 ? 'success' : 'neutral'}>{v.end.length == 0 ? '........' : v.end}</Typography>
+                                            </Stack>
+                                        </Stack>
+
+                                        <ReactCountryFlag
+                                            countryCode={v.flag}
+                                            svg
+                                            cdnUrl="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/"
+                                            cdnSuffix="svg"
+                                            title={v.flag}
+                                            style={{
+                                                width: '20px',
+                                                height: '20px',
+                                                border: '1px #666 solid',
+                                                marginTop: '6px',
+                                            }}
+                                        />
                                     </Stack>
                                 </td>
                             </tr>

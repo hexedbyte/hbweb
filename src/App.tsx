@@ -36,7 +36,7 @@ function App() {
         <Typography level='title-md' color='neutral'>{_.introTitle}</Typography>
         <Typography level='body-md'>{_.intro}</Typography>
 
-        <Typography level='title-sm' mt={4} mb={3} color='neutral' variant='soft' fontWeight='lg'>{_.featured}</Typography>
+        <Typography level='title-sm' mt={3} mb={3} color='neutral' variant='soft' fontWeight='lg'>{_.featured}</Typography>
         <Grid container spacing={2} sx={{ flexGrow: 1 }} >
           <Grid xs={3}><Badger image='htb-ranking' title={_.htbRank} subtitle={_.htbRanking} details={_.htbRankDetails} /></Grid>
           <Grid xs={3}><CardBadger image='frame-1' title={_.htbTop} subtitle={_.htbGlobal} details={_.htbTopDetail} incardTxtBig='22' incardTxtSmall={_.htbGlobalRankSuffix} /></Grid>
@@ -47,21 +47,13 @@ function App() {
           <Grid xs={3}><Badger image='turkgov' title={_.turkGov} subtitle={_.subcontractor} details={_.turkGovDetails} /></Grid>
           <Grid xs={3}><Badger image='turkpolice' title={_.turkPolice} subtitle={_.subcontractor} /></Grid>
           <Grid xs={3}><Badger image='ozelharekat' title={_.turkOzel} subtitle={_.subcontractor} /></Grid>
-
         </Grid>
 
         <Portfolio />
-
-        <Divider />
-
         <WorkExp />
-
         <References />
-
         <Education />
-
         <Languages />
-
         <Private />
 
       </Box>
